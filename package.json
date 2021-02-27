@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/szarlata/node-app.git"
+    "url": "git+https://github.com/szarlata/nodeJS-experiments.git"
   },
   "author": "Ewa Szarlata",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/szarlata/node-app/issues"
+    "url": "https://github.com/szarlata/nodeJS-experiments/issues"
   },
-  "homepage": "https://github.com/szarlata/node-app#readme",
+  "homepage": "https://github.com/szarlata/nodeJS-experiments#readme",
   "dependencies": {
     "express": "^4.17.1"
 

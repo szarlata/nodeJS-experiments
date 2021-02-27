@@ -3,17 +3,16 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   console.log(req.url, req.method);
- 
+
   // set header content type 3 steps: setHeader, write, end
 
   /* res.setHeader('Content-Type', 'text/html')
   res.write('<p>hello</p>');
   res.write('<p>hello2</p>');
   res.end(); */
-  
+
   // end of block
 
-  
   //routing
   res.setHeader("Content-Type", "text/html");
 
@@ -21,12 +20,20 @@ const server = http.createServer((req, res) => {
   switch (req.url) {
     case "/":
       path += "index.html";
+      res.statusCode = 200;
       break;
     case "/about":
       path += "about.html";
+      res.statusCode = 200;
+      break;
+    case "/about-me":
+      res.statusCode = 301;
+      res.setHeader("Location", "/about");
+      res.end();
       break;
     default:
       path += "404.html";
+      res.statusCode = 404;
       break;
   }
 
@@ -36,8 +43,8 @@ const server = http.createServer((req, res) => {
       console.log(err);
       res.end();
     } else {
-      res.write(data);
-      res.end();
+      //res.write(data);
+      res.end(data);
     }
   });
 });
