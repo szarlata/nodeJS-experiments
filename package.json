@@ -1,0 +1,23 @@
+{
+  "name": "newtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szarlata/node-app.git"
+  },
+  "author": "Ewa Szarlata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szarlata/node-app/issues"
+  },
+  "homepage": "https://github.com/szarlata/node-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+
+  }
+}
