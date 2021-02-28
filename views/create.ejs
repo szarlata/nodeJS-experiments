@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document | <%= title %></title>
-  </head>
+  <%- include('./partials/head.ejs') %>
   <body>
-    <div>
-      <h1>Blogs</h1>
-      <nav>
-        <li><a href="/">Homepage</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blogs/create">New Blog</a></li>
-      </nav>
-    </div>
+    <%- include('./partials/nav.ejs') %>
     <div class="create-blog content">
       <form>
         <label for="title">Blog title:</label>
@@ -26,5 +14,6 @@
         <button>Submit</button>
       </form>
     </div>
+    <%- include('./partials/footer.ejs') %>
   </body>
 </html>
