@@ -3,26 +3,40 @@ const express = require('express');
 // express app
 const app = express();
 
+// register view engine
+app.set('view engine', 'ejs');
+
 app.listen(3000);
 
 app.get('/', (req, res) => {
+const blogs = [
+    {title: "Ewa's 1st blog", snippet: "Lorem ipsum"},
+    {title: "Ewa's 2nd blog", snippet: "Lorem ipsum"},
+    {title: "Ewa's 3rd blog", snippet: "Lorem ipsum"}
+];
+
+
     //sending html
     //res.send('<p>Express here, hello</p>');
-
-    //sending file
+res.render('index', { title: 'Home', blogs});
+    /* //sending file
     res.sendFile('./views/index.html', { root: __dirname });
-    // object { root: __dirname } - we need absolute path to the file or definition of root directory
+    // object { root: __dirname } - we need absolute path to the file or definition of root directory */
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile('./views/about.html', { root: __dirname });
+    res.render('about', { title: 'About'});
+});
+
+app.get('/blogs/create', (req, res) => {
+    res.render('create', { title: 'Create'});
 });
 
 app.get('/about-us', (req, res) => {
-    res.redirect('./views/about.html', { root: __dirname });
+    res.redirect('/about');
 });
 
 // when any code above doesn't match - 404 page (it should go to very bottom of the code)
 app.use((req, res) => {
-    res.status(404).sendFile('./views/404.html', { root: __dirname })
+    res.status(404).render('404', { title: '404'});
 });
