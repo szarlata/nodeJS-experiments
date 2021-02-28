@@ -1,0 +1,12 @@
+body {
+    max-width: 20vw;
+    margin: auto;
+    padding: 5vh;
+    background-color: lightslategrey;
+    font-family: Lato, Arial;
+    text-align: center;
+    list-style: circle;
+}
+
+/* stylesheet put in the folder PUBLIC to allow the browser to access it (otherwise it will be declined)
+ */
